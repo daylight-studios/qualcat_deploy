@@ -1,7 +1,7 @@
 export app_name=react-test-app
 sudo apt-get update
 sudo apt-get install -y build-essential openssl libssl-dev pkg-config
-sudo apt-get install -y nodejs nodejs-legacy 
+sudo apt-get install -y nodejs nodejs-legacy
 sudo apt-get install npm -y
 sudo npm cache clean -f
 sudo npm install -g n
@@ -19,8 +19,7 @@ sudo npm install pm2 -g
 (cd /var/www/$app_name && sudo npm install)
 
 (cd /var/www/$app_name/views && sudo npm install)
-(cd /var/www/$app_name/views && sudo npm run build) # npm ERR! missing script: build
-
+(cd /var/www/$app_name/views && sudo npm run build)
 (cd /var/www/$app_name && pm2 start server.js)
 sudo service nginx stop && sudo service nginx start
 
